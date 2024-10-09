@@ -1,30 +1,71 @@
- <title> Html Studdio </title>
- <h1>HTML STUDIO</h1>
- <!DOCTYPE html> 
- <html> 
-     <head> 
-         <style> 
-             .texto-degradado { background: -webkit-linear-gradient( #4E2394, #DBC9F5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 14px; font-weight: bold; } 
-         </style> 
-     </head> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
      
-     <body> 
-         <p class="texto-degradado">Hoy en html stuidio aprenderemos a hacer una pagina web sencilla para todos los intengrates de esta clase</p> 
-     </body> 
- 
-<ol>
-    <li> Ponemos un título </li>
-    <li> Añadimos explicación </li>
-    <li> Ponemos un link </li>
-    <li> Añadimos una imagen</li>
-</ol>
-
-<p> Aqui tenemos un link para conseguir comandos de html, los cuales podemos utilizar para empezar con lo basico. </p>
-
-<a href="https://github.com/rusben/smx-m08/blob/main/docs/etiquetes-basiques-html.md">Visita Exemple.com</a> 
-
-<body background=""></body> 
-<img src="html.png" alt="Logotipo de nuestro programa para crear una web">
-
-
-
+        }
+        .texto-degradado-link {
+            background: -webkit-linear-gradient(#4b3bd8, #04d5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        ol {
+            margin-left: 20px;
+        }
+        a {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #4b3bd8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #3a2a9c;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4b3bd8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #3a2a9c;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Studio</h1>
+    <p class="texto-degradado">Hoy en HTML Studio aprenderemos a hacer una página web sencilla para todos los integrantes de esta clase.</p>
+    
+    <ol>
+        <li>Ponemos un título</li>
+        <li>Añadimos explicación</li>
+        <li>Ponemos un link</li>
+        <li>Añadimos una imagen</li>
+    </ol>
+    
+    <p class="texto-degradado-link">Aquí tenemos un link para conseguir comandos de HTML, los cuales podemos utilizar para empezar con lo básico:</p>
+    <a href="https://github.com/rusben/smx-m08/blob/main/docs/etiquetes-basiques-html.md">Visita Exemple.com</a>
+    
+    <img src="html.png" alt="Logotipo de nuestro programa para crear una web" style="max-width: 100%; height: auto; margin-top: 20px;">
+    
+    <button onclick="alert('¡Bienvenido a HTML Studio!')">¡Comenzar!</button>
+</body>
+</html>

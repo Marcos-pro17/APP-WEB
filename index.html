@@ -1,71 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Studio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        h1 {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-image: linear-gradient(120deg, #e1e8ed 0%, #f0f4f8 100%);
             color: #333;
-     
+            line-height: 1.6;
         }
-        .texto-degradado-link {
-            background: -webkit-linear-gradient(#4b3bd8, #04d5fa);
+
+        header {
+            background-color: #4b3bd8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: #3a2a9c;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        .texto-degradado {
+            background: -webkit-linear-gradient(#281dc5, #08f1f1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-size: 14px;
+            font-size: 1.2em;
             font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
+
         ol {
             margin-left: 20px;
+            padding: 0;
+            list-style-type: none;
         }
+
+        ol li {
+            margin-bottom: 10px;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        ol li::before {
+            content: '✔️';
+            position: absolute;
+            left: 0;
+            color: #4b3bd8;
+        }
+
         a {
             display: inline-block;
             margin: 10px 0;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #4b3bd8;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
+
         a:hover {
             background-color: #3a2a9c;
+            transform: translateY(-2px);
         }
+
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #4b3bd8;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
+
         button:hover {
             background-color: #3a2a9c;
+            transform: translateY(-2px);
+        }
+
+        img {
+            max-width: 500%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Imagen que se mostrará al hacer clic */
+        .image-container {
+            display: none; /* Oculto por defecto */
+            text-align: right;
+            margin-top: -400px;
+        }
+
+        .image-container img {
+            width: 50%; /* Ajusta el tamaño de la imagen */
+            max-width: 400px; /* Límite máximo de ancho */
+            height: auto; /* Mantiene la proporción de aspecto */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            button, a {
+                width: 100%;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
+
 <body>
-    <h1>HTML Studio</h1>
-    <p class="texto-degradado">Hoy en HTML Studio aprenderemos a hacer una página web sencilla para todos los integrantes de esta clase.</p>
-    
-    <ol>
-        <li>Ponemos un título</li>
-        <li>Añadimos explicación</li>
-        <li>Ponemos un link</li>
-        <li>Añadimos una imagen</li>
-    </ol>
-    
-    <p class="texto-degradado-link">Aquí tenemos un link para conseguir comandos de HTML, los cuales podemos utilizar para empezar con lo básico:</p>
-    <a href="https://github.com/rusben/smx-m08/blob/main/docs/etiquetes-basiques-html.md">Visita Exemple.com</a>
-    
-    <img src="html.png" alt="Logotipo de nuestro programa para crear una web" style="max-width: 100%; height: auto; margin-top: 20px;">
-    
-    <button onclick="alert('¡Bienvenido a HTML Studio!')">¡Comenzar!</button>
+    <header>
+        <h1>HTML Studio</h1>
+        <p class="texto-degradado">Aprende a crear páginas web sencillas.</p>
+    </header>
+
+    <main style="padding: 20px;">
+        <ol>
+            <li>Ponemos un título</li>
+            <li>Añadimos explicación</li>
+            <li>Ponemos un link</li>
+            <li>Añadimos una imagen</li>
+        </ol>
+
+        <p class="texto-degradado">Aquí tenemos un link para conseguir comandos de HTML:</p>
+        <a href="https://github.com/rusben/smx-m08/blob/main/docs/etiquetes-basiques-html.md">Visita Exemple.com</a>
+
+        <img src="html.png" alt="Logotipo de nuestro programa para crear una web">
+
+        <button onclick="mostrarImagen()">¡Comenzar!</button>
+
+        <!-- Contenedor de la imagen que se mostrará al hacer clic -->
+        <div class="image-container" id="imageContainer">
+            <img src="html1.jpeg" alt="Imagen de ejemplo" id="imagenEjemplo">
+            <p id="textoImagen">Aqui tenemos codigo Html.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HTML Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function mostrarImagen() {
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.style.display = 'block'; // Muestra el contenedor de la imagen
+        }
+    </script>
 </body>
+
 </html>
